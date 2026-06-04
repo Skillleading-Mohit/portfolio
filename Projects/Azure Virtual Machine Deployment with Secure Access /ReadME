@@ -19,3 +19,7 @@ Configured Azure Backup for VM
 Azure Portal, Azure Virtual Machines, NSG, RDP, IIS Server, Azure Backup
 **`Outcome`**
 Successfully deployed a secure and accessible cloud-based virtual machine with proper access control and backup, demonstrating Azure infrastructure management skills.
+
+![VirtualMachine Properties](Assets/VM-Properties.png)
+
+<img src="Assets/VM-Properties.png" alt=" VirtualMachine Properties" width="500">
