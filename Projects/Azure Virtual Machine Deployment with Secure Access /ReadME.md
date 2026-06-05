@@ -27,3 +27,5 @@ Successfully deployed a secure and accessible cloud-based virtual machine with p
 ![NSG Properties](Assets/NSG-Web-1.png)
 ![Connected Virtual Machine through Secure RDP Connection](Assets/Connected-VM-RDP.png)
 ![Installing ISS Web Server though Az PowerShell](Assets/Installing-IISWebServer.png)
+![Live ISS default website](Assets/Live-IIS-WebSite.png)
+![Port 80 open status](Assets/Test-NetConnection.png)
