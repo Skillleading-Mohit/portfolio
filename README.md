@@ -5,10 +5,6 @@
 # Projects
 
 ### 1. Azure Virtual Network with VPN Connectivity
-
-# Projects portfolio
-
-### 1. Azure Virtual Network with VPN Connectivity
 *   **Objective:** Designed a secure, hybrid network topology connecting on-premises servers and users to Azure cloud resources through encripted VPN S2S & P2S tunnels.
 *   **Tech Stack:** Azure VNet, VPN Gateway, Local Network Gateway, BGP, Network Security Groups (NSGs).
 *   **Key Outcome:** Established encrypted, high-availability Point-to-Site and Site-to-Site tunnels with zero downtime.
