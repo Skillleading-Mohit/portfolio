@@ -33,6 +33,11 @@
 *   **Key Outcome:** Eliminated public IP exposures by routing administrative management exclusively through secure Bastion hosts.
 *   **Documentation:** [View Project Files](Projects/Azure%20Virtual%20Machine%20Deployment%20with%20Secure%20Access%20)
 
+### 🛠️ Additional Tools & Project Repos
+*   **[SQLTOOL](https://github.com/Skillleading-Mohit/SQLTOOL):** A lightwaight automated SQL Server backup solution.
+*   **[YouTube Video Downloader](https://github.com/Skillleading-Mohit/Youtube-Downloader-Python):** A python based youtube video downloader and converter.
+*   **[Instagram Reels Downloader](https://github.com/Skillleading-Mohit/Insta-Rell-Downloader):** A python based Instagram reels downloader
+*   **[Must have PowerShell Scripts for Windows Administrators](https://github.com/Skillleading-Mohit/PowerShell_Scripts):** This repo contains multiple PowerShell usefull for Windows Administrators
 
 ## 📬 Connect With Me
 *   💼 **LinkedIn:** [LinkedIn Profile link](https://www.linkedin.com/in/mohit-p-984419207?utm_source=share_via&utm_content=profile&utm_medium=member_android)
