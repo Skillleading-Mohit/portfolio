@@ -1,9 +1,5 @@
 <h1 align="center">Mohit Panwar</h1>
 
-<p align="center">
-  <a href="#">Portfolio</a>
-</p>
-
 ---
 
 # Projects
