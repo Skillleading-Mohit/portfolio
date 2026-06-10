@@ -107,7 +107,7 @@ If you want to chat about Azure cloud architecture, security, or hybrid networki
 
 ## Other Importent Details 
 
-# A Diagram of Azure Site-to-Site VPN 
+# A Diagram of Azure Site-to-Site VPN Architecture
 
 ```
 +-------------------------------------------------------------------------------------------------+
@@ -157,20 +157,13 @@ If you want to chat about Azure cloud architecture, security, or hybrid networki
 # Key Options / Resources Required for Site-to-Site VPN
 
 1. Resource Group: The logical container holding all your Azure networking assets.
-
 2. Virtual Network (VNet): Your private cloud network space configured with your dedicated IP address ranges.
-
 3. Production / Workload Subnet: This subnet contains VM's and other resources which you will access through VPN connection.
-
-3. GatewaySubnet: A specialized subnet named strictly GatewaySubnet used exclusively by the VPN gateway infrastructure. It should be at least a /27.
-
-4. Public IP Address: A dedicated Standard or Basic dynamic/static public IP tied to the Azure gateway endpoint.
-
-5. Virtual Network Gateway: The actual software appliance routing encrypted traffic. You specify its performance SKU and link it directly to your GatewaySubnet and Public IP created earlier.
-
-6. Local Network Gateway (LNG): An Azure object that acts as a local pointer. It defines your on-premises public IP address and your on-premises local network subnets so Azure knows where to route traffic.
-
-7. Connection: The software link representing the active tunnel configuration. Here, you declare it as a Site-to-Site (IPsec) type and assign the Pre-Shared Key (PSK) used by both endpoints for secure handshaking (Available at Virtual Network Gateway>Connection)
+4. GatewaySubnet: A specialized subnet named strictly GatewaySubnet used exclusively by the VPN gateway infrastructure. It should be at least a /27.
+5. Public IP Address: A dedicated Standard or Basic dynamic/static public IP tied to the Azure gateway endpoint.
+6. Virtual Network Gateway: The actual software appliance routing encrypted traffic. You specify its performance SKU and link it directly to your GatewaySubnet and Public IP created earlier.
+7. Local Network Gateway (LNG): An Azure object that acts as a local pointer. It defines your on-premises public IP address and your on-premises local network subnets so Azure knows where to route traffic.
+8. Connection: The software link representing the active tunnel configuration. Here, you declare it as a Site-to-Site (IPsec) type and assign the Pre-Shared Key (PSK) used by both endpoints for secure handshaking (Available at Virtual Network Gateway>Connection)
 
 
 
