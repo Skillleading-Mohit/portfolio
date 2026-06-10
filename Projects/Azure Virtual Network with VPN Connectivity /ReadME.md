@@ -1,16 +1,17 @@
 # Azure VNet with VPN Connectivity Implementation Documentation
 
 ## Objective
-The goal of this project is to establish a secure, reliable, and scalable hybrid networking environment. It connects an `on-premises network` to an `Azure Virtual Network (VNet)` using a `Route-Based Site-to-Site (S2S) VPN gateway` and I also implemented `Point-to-Site VPN` in this lab. This ensures encrypted cross-premises communication over the public internet, allowing secure cloud resource management and seamless workload migration.
+The goal of this project is to establish a secure, reliable, and scalable hybrid networking environment. It connects an `on-premises network` and `Remote administrator` to an `Azure Virtual Network (VNet)` using a `Route-Based Site-to-Site (S2S) and point-to-Site (S2S) VPN gateway` This ensures encrypted cross-premises communication over the public internet, allowing secure cloud resource management and seamless workload migration.
 
-## Architecture
+## Architecture 📐
+
 The hybrid architecture utilizes a Hub-and-Spoke topology foundation, consisting of the following key components:
-
+### Vnet 🖧 and Virtual Network Getway 
 *   **Azure VNet (`Vnet-IN-DevTest`):** Address space `10.0.0.0/24` located in the IN Central region.
-*   **Production Subnet (`Subnet-DevTest-Apps`):** Address space `10.0.1.0/28` hosting core cloud workloads.
+*   **Production Subnet (`Subnet-DevTest-Apps`):** Address space `10.0.1.0/28` hosting core cloud workloads for e.g., `Virtul Machines`.
 *   **Gateway Subnet (`GatewaySubnet`):** Dedicated address space `10.1.0.0/27` required to host the Virtual Network Gateway.
-*   **Virtual Network Gateway (`VNG-DevTest-Hub`):** VpnGw2 SKU, route-based generation 2, utilizing a standard Public IP address `VNG-DevTest-PubIP`.
-### S2S VPN
+*   **Virtual Network Gateway (`VNG-DevTest-Hub`):** VpnGw2 SKU, route-based generation 2, utilizing a standard Public IP address named `VNG-DevTest-PubIP`.
+### S2S VPN - In Progress
 *   **Dynamic BGP Routing Integration:** Configured dynamic route propagation using Azure Private ASN (65515) alongside Custom APIPA BGP Peer address mappings (`169.254.x.x`) to resolve cross-          premises IP translation conflicts.
 *   **Local Network Gateway (`LNG-OnPrem-HQ`):** Represents the physical on-premises network object in Azure, referencing the on-premises public IP (``) and local address space (`10.91.0.0/16`).
 *   **VPN Connection (`Conn-Hub-To-OnPrem`):** IPSec/IKEv2 tunnel secured via a Pre-Shared Key (PSK).
@@ -20,7 +21,7 @@ The hybrid architecture utilizes a Hub-and-Spoke topology foundation, consisting
 *   **VPN Profile Configuration** Point-to-Site Configuration with `Address space: 172.16.0.0/24` "It must be different from the Vnet adress spaces and the on-prem network address spaces.", `Tunnel type: IKEv2 and SSTP (SSL)` and `Authentication type: Azure certificate` used `SelfSigned Certificated`
 
 
-## Performed Steps
+## Performed Steps ⚡
 
 ### Phase 1: Azure Network Infrastructure Provisioning
 1.  **Created the Virtual Network:** Deployed `Vnet-IN-DevTest ` with the address block `10.0.0.0/24`.
@@ -44,8 +45,27 @@ The hybrid architecture utilizes a Hub-and-Spoke topology foundation, consisting
 
 ### Phase 5: Point-to-Site VPN Deployment
 1. **Profile Deployment:** On the `VNG-DevTest-Hub` under Point-to-Site Configuration tab, I configured Address spaces for VPN P2S Clients `Address space: 172.16.0.0/24`, Choosed `Tunnel type: IKEv2 and SSTP (SSL)` and `Authentication type: Azure certificate` I used SelfSigned Certificated for authentication.
-2. **Generated SelfSigned Certificates:** Used [Powershell Script](./) and added the certificates on `Point-to-Site Configuration tab > Root Certificates`
-3. **Downloaded VPN Profile:** After successfull save, I downloaded the file and transfered on the client machine. 
+2. **Generated SelfSigned Certificates:** Used Powershell Script and added the certificates on `Point-to-Site Configuration tab > Root Certificates`
+
+```
+# RootCA 
+$rootCert = New-SelfSignedCertificate -Type Custom -KeySpec Signature `
+-Subject "CN=MohitAzureVPNRootCA" -KeyExportPolicy Exportable `
+-HashAlgorithm sha256 -KeyLength 2048 `
+-CertStoreLocation "Cert:\CurrentUser\My" `
+-KeyUsageProperty Sign -KeyUsage CertSign
+
+
+#Client Certificate
+
+New-SelfSignedCertificate -Type Custom -DnsName "Mohit-personalLaptop" `
+-KeySpec Signature -KeyExportPolicy Exportable `
+-HashAlgorithm sha256 -KeyLength 2048 `
+-CertStoreLocation "Cert:\CurrentUser\My" `
+-Signer $rootCert -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.2")
+```
+
+4. **Downloaded VPN Profile:** After successfull save, I downloaded the file and transfered on the client machine. 
  
 
 ### Phase 5: Configured point-to-Site VPN client on Local Machine
@@ -67,4 +87,69 @@ The hybrid architecture utilizes a Hub-and-Spoke topology foundation, consisting
 
 
 ## Outcome
-The project successfully delivered an operational, secure hybrid network tunnel. On-premises administrators can now securely access cloud workloads via internal IP addressing schemes without exposing public endpoints. The infrastructure provides reliable encrypted data transit, satisfies strict organizational security compliance requirements, and lays the groundwork for future multi-region hub-and-spoke expansion.
+Built a secure hybrid network that connects both office datacenters `(via Site-to-Site VPN)` and remote users working from home `(via Point-to-Site VPN)` straight to Azure. By deploying both `Site-to-Site and` `Point-to-Site VPNs`, IT teams and remote administrators can securely manage cloud workloads using private internal IPs—meaning no public endpoints are ever exposed to the internet. It keeps data encrypted and compliant, while creating a scalable foundation that’s ready to grow into a larger `hub-and-spoke network`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Diagram of Azure Site-to-Site VPN
+
+```
++-------------------------------------------------------------------------------------------------+
+
+|                                       MICROSOFT AZURE                                           |
+|                                                                                                 |
+|  +--------------------------------------- RESOURCE GROUP ------------------------------------+  |
+|  |                                                                                           |  |
+|  |   +--------------------------------- VIRTUAL NETWORK (VNet) --------------------------+   |  |
+|  |   |                                                                                   |   |  |
+|  |   |   +--------------------------+                 +------------------------------+   |  |
+|  |   |   |      GatewaySubnet       |                 |        Workload Subnet       |   |  |
+|  |   |   |       (e.g., /27)        |                 |          (e.g., /24)         |   |  |
+|  |   |   |                          |                 |                              |   |  |
+|  |   |   |  [VirtualNetworkGateway] |                 |   [Azure VM / Resources]     |   |  |
+|  |   |   +------------+-------------+                 +--------------+---------------+   |  |
+|  |   |                |                                              |                   |   |  |
+|  |   +----------------|----------------------------------------------|-------------------+   |  |
+|  |                    |                                              |                   |  |
+|  |             +------+------+                                       |                   |  |
+|  |             |  Public IP  |                                       |                   |  |
+|  |             +------+------+                                       |                   |  |
+|  |                    |                                              |                   |  |
+|  |             [ Connection ] <------- (Links Azure Gateway & LNG)  |                   |  |
+|  |                    |                                                                  |  |
+|  |          [LocalNetworkGateway] <--- (Represents On-Premises IP & Subnets)             |  |
+|  +--------------------+----------------------------------------------------------------------+  |
++-----------------------|-------------------------------------------------------------------------+
+                        |
+                        | ==================================================
+                        |  IPsec / IKE VPN Tunnel (Encrypted via Internet)
+                        | ==================================================
+                        |
++-----------------------|-------------------------------------------------------------------------+
+
+|                       |               ON-PREMISES NETWORKING                                    |
+|                       |                                                                         |
+|                +------+------+                                                                  |
+|                |  Edge Router|  <---- (On-Premises VPN Device with Public IP Address)           |
+|                +------+------+                                                                  |
+|                       |                                                                         |
+|         +-------------+-------------+                                                           |
+|         |    Local LAN Subnets      |  <---- (Internal Networks, e.g., 192.168.1.0/24)          |
+|         +---------------------------+                                                           |
++-------------------------------------------------------------------------------------------------+
+
+```
+
