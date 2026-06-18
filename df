@@ -1,0 +1,146 @@
+[33mcommit 53f80872ddf7c0e6a8574ca1ff08e3549dd9ccdc[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mstage[m[33m, [m[1;31morigin/stage[m[33m)[m
+Author: Mohit Panwar <panwarmohit683@gmail.com>
+Date:   Thu Jun 18 11:25:59 2026 +0530
+
+    update ReamME.MD for EntraConnect
+
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_AdministratorLogin.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect-AdministratorLogin.png[m
+[1msimilarity index 100%[m
+[1mrename from Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_AdministratorLogin.png[m
+[1mrename to Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect-AdministratorLogin.png[m
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_AdministratorLoginError.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect-AdministratorLoginError.png[m
+[1msimilarity index 100%[m
+[1mrename from Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_AdministratorLoginError.png[m
+[1mrename to Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect-AdministratorLoginError.png[m
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_Login_On-Prem-Synced_user-on-azure.PNG b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect-Login_On-Prem-Synced_user-on-azure.PNG[m
+[1msimilarity index 100%[m
+[1mrename from Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_Login_On-Prem-Synced_user-on-azure.PNG[m
+[1mrename to Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect-Login_On-Prem-Synced_user-on-azure.PNG[m
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_configuring-CustomSync-Step2.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect-configuring-CustomSync-Step1.png[m
+[1msimilarity index 100%[m
+[1mrename from Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_configuring-CustomSync-Step2.png[m
+[1mrename to Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect-configuring-CustomSync-Step1.png[m
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_configuring-CustomSync-Step3.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect-configuring-CustomSync-Step2.png[m
+[1msimilarity index 100%[m
+[1mrename from Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_configuring-CustomSync-Step3.png[m
+[1mrename to Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect-configuring-CustomSync-Step2.png[m
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_configuring-CustomSync-Step4.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect-configuring-CustomSync-Step3.png[m
+[1msimilarity index 100%[m
+[1mrename from Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_configuring-CustomSync-Step4.png[m
+[1mrename to Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect-configuring-CustomSync-Step3.png[m
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_configuring-CustomSync-Step5.1.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect-configuring-CustomSync-Step4.png[m
+[1msimilarity index 100%[m
+[1mrename from Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_configuring-CustomSync-Step5.1.png[m
+[1mrename to Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect-configuring-CustomSync-Step4.png[m
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_configuring-CustomSync-Step5.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect-configuring-CustomSync-Step5.png[m
+[1msimilarity index 100%[m
+[1mrename from Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_configuring-CustomSync-Step5.png[m
+[1mrename to Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect-configuring-CustomSync-Step5.png[m
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect1.PNG b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect1.PNG[m
+[1mnew file mode 100644[m
+[1mindex 0000000..610249e[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect1.PNG differ
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect10.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect10.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..721e963[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect10.png differ
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect11.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect11.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2e88576[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect11.png differ
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect12.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect12.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..17325e5[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect12.png differ
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect13.PNG b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect13.PNG[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b012328[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect13.PNG differ
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect14.PNG b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect14.PNG[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6833c2e[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect14.PNG differ
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect15.PNG b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect15.PNG[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c3a3f97[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect15.PNG differ
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/InstallingEntraConnect.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect16.png[m
+[1msimilarity index 100%[m
+[1mrename from Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/InstallingEntraConnect.png[m
+[1mrename to Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect16.png[m
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_ConnectingToEntraID.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect17.png[m
+[1msimilarity index 100%[m
+[1mrename from Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_ConnectingToEntraID.png[m
+[1mrename to Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect17.png[m
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_ConnectTo_AD_DS.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect18.png[m
+[1msimilarity index 100%[m
+[1mrename from Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_ConnectTo_AD_DS.png[m
+[1mrename to Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect18.png[m
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/InstallingEntraConnectRequiredComponents.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect19.png[m
+[1msimilarity index 100%[m
+[1mrename from Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/InstallingEntraConnectRequiredComponents.png[m
+[1mrename to Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect19.png[m
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_Ready_to_configure.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect2.png[m
+[1msimilarity index 100%[m
+[1mrename from Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_Ready_to_configure.png[m
+[1mrename to Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect2.png[m
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect20.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect20.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b20dfa0[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect20.png differ
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect3.PNG b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect3.PNG[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7247833[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect3.PNG differ
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect4.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect4.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..edc5df0[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect4.png differ
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect5.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect5.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0c1d6a4[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect5.png differ
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_configuration-complete.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect6.png[m
+[1msimilarity index 100%[m
+[1mrename from Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_configuration-complete.png[m
+[1mrename to Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect6.png[m
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_configuring.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect7.png[m
+[1msimilarity index 100%[m
+[1mrename from Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/EntraConnect_configuring.png[m
+[1mrename to Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect7.png[m
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect8.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect8.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2ffd169[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect8.png differ
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect9.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect9.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..db81852[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Pics/EntraConnect9.png differ
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step1-InstallingEntraConnect.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step1-InstallingEntraConnect.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7557df8[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step1-InstallingEntraConnect.png differ
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step2-InstallingEntraConnectRequiredComponents.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step2-InstallingEntraConnectRequiredComponents.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..360a68e[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step2-InstallingEntraConnectRequiredComponents.png differ
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step3EntraConnect-ConnectingToEntraID.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step3EntraConnect-ConnectingToEntraID.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..72b30c2[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step3EntraConnect-ConnectingToEntraID.png differ
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step4-EntraConnect-ConnectTo_AD_DS.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step4-EntraConnect-ConnectTo_AD_DS.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e282ffa[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step4-EntraConnect-ConnectTo_AD_DS.png differ
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step5-EntraConnect_Ready_to_configure.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step5-EntraConnect_Ready_to_configure.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4fca357[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step5-EntraConnect_Ready_to_configure.png differ
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step6-EntraConnect-configuring.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step6-EntraConnect-configuring.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5622a1e[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step6-EntraConnect-configuring.png differ
+[1mdiff --git a/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step7-EntraConnect-configuration-complete.png b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step7-EntraConnect-configuration-complete.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..cf244e9[m
+Binary files /dev/null and b/Projects/Active-Directory-&-Azure-AD-Hybrid-Identity-Setup/Assets/Step7-EntraConnect-configuration-complete.png differ
