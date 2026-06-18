@@ -113,8 +113,3 @@ On the `Entra Connect Server` Search for Microsoft Entra Connect Sync and open i
 ![Step 3](./Assets/EntraConnect-configuring-CustomSync-Step3.png)
 ![Step 4](./Assets/EntraConnect-configuring-CustomSync-Step4.png)
 ![Step 5](./Assets/EntraConnect-configuring-CustomSync-Step5.png)
-
-### 1. Group Based Filtering
-
-
-### 1. Object Attribute Based Filtering
