@@ -20,64 +20,59 @@ The core objective of this project was to architect, deploy, and validate a prod
 * **Administration Tools:** Active Directory Users and Computers (ADUC), Microsoft Entra Admin Center (entra.microsoft.com), and PowerShell (Identity validation & delta cycle execution)
 
 ### ***Performed Steps***
-#### **Step 1: Lab Topology & Base Infrastructure Provisioning:**
-* Provisioned a Windows Server 2016 Virtual Machine within Hyper-V with an internal virtual switch.
-* Promoted the server to a `Domain Controller` creating a local root forest `(msp.com)` via AD DS.
-* Configured an `Enterprise OU structure` ([Check](./Assets/)) to segment identities designated for cloud sync scoping.
-* Generated sample directory objects inside the OU using `Active Directory Users and Computers (ADUC)` [link](./Assets/)
-* Created and configured `NatNet` on host machine to provide internet access to the `interal virtual switch`
-[link](./Assets/)
 
-#### ***Step 2: Microsoft Entra Cloud Architecture***
-* Initialized the Microsoft Entra ID tenant using the Azure subscription.
-* Navigated to Identity -> Users and provisioned a cloud-only dedicated Hybrid Identity Administrator account.
+Step 1: Lab Topology & Base Infrastructure Provisioning
 
-#### ***Step 3: Entra Connect Synchronization***
+* **Virtual Machine Setup:** Provisioned a Windows Server 2016 Virtual Machine within Hyper-V using an isolated internal virtual switch.
 
-* Downloaded the official `Microsoft Entra Connect` installation package onto the local `Entra Connect Server`. - We can install `Entra Connect` on `DC` but in production it is recommended to use a dedicated server for this.
+* **Domain Promotion:** Configured and promoted the server to a Domain Controller, creating a local root forest (msp.com) via AD DS.
 
-* Ensured that all required ports are accessible. - as mentioned in last point I used a dedicated VM to host `Entra Connect` So, In this setup ***communication must flow securely in two directions: outbound to Microsoft Entra ID and inbound/outbound with your Domain Controllers***
+* **Network Configuration:** Set up and configured NAT (NatNet) on the host machine to provide secure outbound internet access to the internal virtual switch.
 
-> These are some ports you should allow connection from your `Entra Connect Server` to DC
+* **Directory Structure:** Established an enterprise Organizational Unit (OU) structure to segment identities specifically designated for cloud synchronization scoping. Generated sample directory objects within this OU using Active Directory Users and Computers (ADUC).
 
 
-```
-1 `TCP/UDP 389`     `LDAP:` Used to query and read data from Active Directory.
+Step 2: Microsoft Entra Cloud Architecture
 
-2. `TCP/UDP 53`      `DNS:` Required to resolve Active Directory domain names.
+* **Tenant Initialization:** Initialized the Microsoft Entra ID tenant using an Azure subscription.
 
-3. `TCP 445`         `SMB:` Used during Seamless Single Sign-On (SSO) and password writeback.
+* **Admin Provisioning:** Navigated to Identity > Users in the portal and provisioned a cloud-only, dedicated Hybrid Identity Administrator account to manage the integration.
 
-4 `TCP/UDP 88`      `Kerberos:` Needed for authentication and ticket validation.
+Step 3: Entra Connect Synchronization
 
-5 `TCP 3268 & 3269` `Global Catalog:` Used to search for objects across all forests in a multi-domain environment.
+* **Package Retrieval:** Downloaded the official Microsoft Entra Connect installation package onto the local server.
 
-6 `TCP 135`        `RPC Endpoint Mapper:` Required for resolving random RPC ports for directory replication services.
+* **Network & Port Security:** Verified firewall and routing configurations to ensure secure communication. Since a dedicated VM is used for Entra Connect, the following ports were opened for outbound-only communication:
 
-7 `TCP 49152-65535` `Dynamic RPC Ports:` Used for password synchronization and initial forest binding.
-```
-> Connection outbound to Microsoft Entra ID
-```
-1 `TCP 443` -  Handles all authenticated outbound communication, including syncing data, metadata, and Entra Connect Health services.
+* **Internal (To Domain Controller):** TCP/UDP 389 (LDAP), TCP/UDP 53 (DNS), TCP 445 (SMB), TCP/UDP 88 (Kerberos), TCP 3268 & 3269 (Global Catalog), and RPC ports (TCP 135 / TCP 49152-65535).
 
-2 `TCP 80` -  Used strictly for downloading Certificate Revocation Lists (CRLs) while validating TLS/SSL certificates.
+* **External (To Microsoft Entra ID):** TCP 443 (HTTPS for sync data and metadata) and TCP 80 (for CRL validation).
 
-Note: Traffic is strictly outbound. You do not need to open any inbound ports from the internet to your internal network.
-```
-* Initiated the installation wizard choosing Express Settings for standard topology mapping.
+* **Wizard Configuration:** Launched the installation wizard and selected Express Settings to establish standard topology mapping.
 
-* Authenticated against the cloud endpoint by entering the Hybrid Identity Administrator credentials.
+* **Endpoint Authentication:** Authenticated against the cloud tenant using the Hybrid Identity Administrator credentials, followed by on-premises authentication using Enterprise Administrator credentials to build the forest service accounts.
 
-* Authenticated against the on-premises directory using Enterprise Administrator credentials to provision the forest service account configurations.
+* **Sign-In Method:** Selected `Password Hash Synchronization (PHS)` as the global sign-in verification method.
 
-* Selected Password Hash Synchronization as the global sign-in verification method and checked the box to initiate the initial full synchronization cycle upon completion.
+***Note on Initial Sync:*** During a standard deployment, you can uncheck "Start the synchronization process when configuration completes" if you want to configure specific OU filtering first. For this initial setup, the full synchronization cycle was allowed to run immediately to baseline the environment.
 
 ### ***Step 4: Directory Synchronization Verification***
 
-Writing........
+To confirm that the hybrid identity fabric was functioning correctly, I verified the synchronization from both the on-premises and cloud boundaries:
 
-## ***Output**
-On-prem user can now log into Microsoft cloud environments seamlessly using their original on-prem domain credentials, 
+* Checking the Synchronization Service Manager: Opened the Synchronization Service Manager on the Entra Connect server. I verified that the Delta Import and Delta Synchronization steps completed with a status of success, indicating that the delta changes were successfully processed from the local AD DS.
+
+* Validating via Microsoft Entra Admin Center: Logged into entra.microsoft.com using the Hybrid Identity Administrator account. Navigated to Identity > Users > All Users and verified that the sample user accounts created in the local OU were visible.
+
+* Verifying Directory Source Attribute: In the Entra ID user list, I confirmed that the synchronized users displayed On-premises directory sync enabled as Yes (or showing the source as On-premises Active Directory), distinguishing them from cloud-only accounts.
+
+## **Output**
+
+* Unified Identity Lifecycle: On-premises Active Directory objects (Users and Groups) are now automatically mapped and synchronized to the Microsoft Entra ID tenant.
+
+* Seamless Authentication: Local domain users can now securely log into Microsoft 365 and Azure cloud environments using their original on-premises corporate credentials.
+
+* Centralized Control: Password changes made in the local AD DS are seamlessly tracked and updated in the cloud via Password Hash Synchronization (PHS), maintaining a single point of administrative control.
 
 # Performed Steps with Screen Shots
 
